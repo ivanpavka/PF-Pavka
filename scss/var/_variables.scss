@@ -1,0 +1,7 @@
+$new-color: rgb(80, 121, 72);
+
+@mixin flex-center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

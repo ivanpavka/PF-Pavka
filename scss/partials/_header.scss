@@ -1,0 +1,52 @@
+@import '../var/variables';
+
+.grid-menu{
+    grid-area: cabecera;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: #2D1301;
+    
+
+    .logo{
+        text-decoration: none;
+        color: white;
+        font-size: 3rem;
+        &:hover{
+            transform: scale(1.1);
+        }
+}
+
+.site-nav{
+    @include flex-center;
+    }
+    ul{
+        @include flex-center;        
+        gap: 1rem;
+        li{
+            list-style: none;
+            &:hover{
+                transform: scale(1.1);
+            }
+            a{
+                text-decoration: none;
+                font-size: 2rem;
+                color: white;
+                &:hover{
+                    color: rgb(243, 214, 133);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .grid-menu{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+}

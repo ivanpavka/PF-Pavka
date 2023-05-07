@@ -1,0 +1,35 @@
+.grid-portada{
+    grid-area: portada;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    background-image: url(/img/portada-home.jpg);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: -350px center;
+    color: #fdf9df;
+
+    p{
+        font-size: 2rem;
+        line-height: 1.5;
+        width: 40rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .grid-portada{
+        background-position: -750px center;
+        justify-content: center;
+        align-items: end;
+        text-align: right;
+        padding: 0 4rem;
+        h1{
+            font-size: 10rem;
+        }
+        p{
+            font-size: 3rem;
+            width: 70rem;
+        }
+    }
+}

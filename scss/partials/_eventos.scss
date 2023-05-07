@@ -1,0 +1,99 @@
+@import './boton-animado1';
+
+.evento-contenedor { 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4em 20em auto 10em;
+    grid-template-areas:
+                        "cabecera"
+                        "event-portada"
+                        "noticias"
+                        "footer"              
+}
+.event-portada{
+    grid-area: event-portada;
+    @extend .grid-portada;
+    background-image: url(/img/eventos-port.jpg);
+
+}
+
+.noticias {
+    grid-area: noticias; 
+    display: grid;
+    width: 95%;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(4, 1fr); 
+    gap: 2rem; 
+    grid-template-areas: 
+      "noti1"
+      "noti2"
+      "noti3"
+      "noti4";
+    justify-self: center;
+    padding: 2rem 0;
+}
+
+  .noti1 {
+    grid-area: noti1;
+}
+  .noti2 {
+    grid-area: noti2;
+}
+  .noti3 {
+    grid-area: noti3;
+}
+  .noti4 {
+    grid-area: noti4;
+}
+
+.evento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: rgb(245, 245, 245);
+    border-radius: 1rem;
+    h2 {
+        font-size: 3rem;
+        color: #5f0e0e;
+    }
+    p {
+        margin-top: 1rem;
+        font-size: 2rem;
+        width: 40rem;
+    }
+}
+
+
+@media screen and (min-width: 1024px){
+    .evento-contenedor {
+        grid-template-columns: 1fr;
+        grid-template-rows: 4em 30em auto 10em;
+    }
+    .noticias{
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+                            "noti1    noti2"
+                            "noti3    noti4";
+    }
+
+    .evento {
+        h2 {
+            font-size: 5rem;
+            color: #5f0e0e;
+        }
+        p {
+            margin-top: 1rem;
+            font-size: 3rem;
+            width: 70rem;
+        }
+    }
+
+    .event-portada{
+        background-size: 130%;
+        background-position: -550px -550px;           
+    }
+}

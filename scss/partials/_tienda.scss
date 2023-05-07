@@ -1,0 +1,48 @@
+.tienda-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 8em 20em repeat(8, auto) 15em;
+    grid-template-areas: 
+                        "cabecera   cabecera"
+                        "t-portada  t-portada"
+                        "prod1      prod2" 
+                        "prod3      prod4"
+                        "prod5      prod6" 
+                        "prod7      prod8"
+                        "prod9      prod10"
+                        "prod11     ."
+                        "prod12     prod13"
+                        "prod14     prod15"
+                        "footer     footer"; 
+}
+
+.tienda-portada{
+    grid-area: t-portada;
+    @extend .grid-portada;
+    background-image: url(/img/tienda-100.jpg);
+    background-position: center center;
+    justify-content: start;
+    padding-top: 5rem;
+
+}
+
+@media screen and (min-width: 1024px){
+    .tienda-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 4em 20em repeat(4, auto) 10em;
+        grid-template-areas: 
+                            "cabecera   cabecera    cabecera    cabecera"
+                            "t-portada  t-portada   t-portada   t-portada"
+                            "prod1      prod2       prod3       prod4"
+                            "prod5      prod6       prod7       prod8"
+                            "prod9      prod10      prod11      ."
+                            "prod12     prod13      prod14      prod15"
+                            "footer     footer      footer      footer"; 
+    }
+
+    .tienda-portada{
+        background-size: 125%;
+        background-position: -150px -350px;           
+    }
+}
+

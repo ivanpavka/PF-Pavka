@@ -1,0 +1,31 @@
+.boton{
+        button{
+            font-weight: 700;
+            color: #352020 ;
+            background-color: #e0e0e0;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+            font-size: 1.5rem;
+
+        &:hover{
+            background-color:#352020;
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+        }
+        }
+}
+
+@media screen and (min-width: 1024px){
+    .boton{
+        button{
+            font-weight: 700;
+            color: #352020 ;
+            background-color: #e0e0e0;
+            padding: 2rem 3rem;
+            font-size: 2rem;
+        }
+}
+}
