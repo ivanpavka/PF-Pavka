@@ -236,7 +236,7 @@ a {
 .evento-contenedor {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 4em 20em auto 10em;
+  grid-template-rows: 8em 20em auto 10em;
   grid-template-areas: "cabecera" "event-portada" "noticias" "footer";
 }
 
