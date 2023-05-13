@@ -1,0 +1,73 @@
+@import './boton-animado1';
+@import '../var/variables';
+
+
+
+.contact-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8em 20em 5em auto auto 15em;
+    grid-template-areas:    "cabecera"
+                            "c-port"
+                            "c-horarios"
+                            "c-form"
+                            "c-mapa"
+                            "footer";
+
+    .contact-portada{
+        grid-area: c-port;
+        @extend .grid-portada;
+        background-image: url(../../img/portada-contacto.jpg);
+    }
+
+    .horario{
+        grid-area: c-horarios;
+        margin: 2rem 0;
+        @include flex-textcenter;
+        flex-direction: column;
+        h4{
+            color: #DDA15E;
+            font-size: 3rem;
+        }
+    }
+
+    .mapa{
+        grid-area: c-mapa;
+        @include flex-textcenter;
+        margin: 2rem 0;
+        iframe{
+            border-radius: 1rem;
+            width: 95%;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .contact-container{
+        grid-template-rows: 4em 20em 8em auto auto 10em;
+
+        .contact-portada{
+            background-size: 100%;
+            background-position: center center;
+        }
+
+        .horario{
+            h4{
+                font-size: 4rem;
+            }
+            p{
+                font-size: 3rem;
+            }
+        }
+
+        .mapa{
+            grid-area: c-mapa;
+            @include flex-textcenter;
+            margin: 2rem 0;
+            iframe{
+                border-radius: 1rem;
+                width: 95%;
+            }
+        }
+    }
+}

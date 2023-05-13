@@ -20,10 +20,10 @@
 }
 
 .site-nav{
-    @include flex-center;
+    @include flex-between;
     }
     ul{
-        @include flex-center;        
+        @include flex-between;        
         gap: 1rem;
         li{
             list-style: none;

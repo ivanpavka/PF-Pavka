@@ -1,17 +1,15 @@
-/**{
-    border: solid 2px red;
-}*/
 /* GENERALES Y REUTILIZABLES*/
 * {
   margin: 0;
   padding: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 html {
   font-family: contralto-small;
   font-weight: 200;
   font-size: 62.5%;
+  color: #464646;
 }
 
 h1 {
@@ -28,12 +26,28 @@ img {
   max-width: 100%;
 }
 
+iframe {
+  max-width: 100%;
+}
+
 a {
   text-decoration: none;
 }
 
 .text-center {
   text-align: center;
+}
+
+label {
+  font-size: 3rem;
+}
+
+input {
+  width: 40rem;
+  height: 3rem;
+  background-color: #eeeeee;
+  border-style: none;
+  border-bottom: solid 1px black;
 }
 
 .cards {
@@ -45,6 +59,7 @@ a {
 }
 .cards:hover {
   transform: scale(1.1);
+  color: #521414;
 }
 
 .grid-menu {
@@ -98,7 +113,7 @@ a {
     padding: 0 2rem;
   }
 }
-.grid-portada, .tienda-portada, .event-portada {
+.grid-portada, .oliva-container .oliva-portada, .contact-container .contact-portada, .tienda-container .tienda-portada, .event-portada {
   grid-area: portada;
   display: flex;
   flex-direction: column;
@@ -110,24 +125,24 @@ a {
   background-position: -350px center;
   color: #fdf9df;
 }
-.grid-portada p, .tienda-portada p, .event-portada p {
+.grid-portada p, .oliva-container .oliva-portada p, .contact-container .contact-portada p, .tienda-container .tienda-portada p, .event-portada p {
   font-size: 2rem;
   line-height: 1.5;
   width: 40rem;
 }
 
 @media screen and (min-width: 1024px) {
-  .grid-portada, .tienda-portada, .event-portada {
+  .grid-portada, .oliva-container .oliva-portada, .contact-container .contact-portada, .tienda-container .tienda-portada, .event-portada {
     background-position: -750px center;
     justify-content: center;
     align-items: end;
     text-align: right;
     padding: 0 4rem;
   }
-  .grid-portada h1, .tienda-portada h1, .event-portada h1 {
+  .grid-portada h1, .oliva-container .oliva-portada h1, .contact-container .contact-portada h1, .tienda-container .tienda-portada h1, .event-portada h1 {
     font-size: 10rem;
   }
-  .grid-portada p, .tienda-portada p, .event-portada p {
+  .grid-portada p, .oliva-container .oliva-portada p, .contact-container .contact-portada p, .tienda-container .tienda-portada p, .event-portada p {
     font-size: 3rem;
     width: 70rem;
   }
@@ -135,37 +150,43 @@ a {
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 8em 20em auto auto 15em;
-  grid-template-areas: "cabecera   cabecera" "portada    portada" "card1      card2" "card3      card4" "footer     footer";
+  grid-template-rows: 8em 20em 5em auto auto 15em;
+  grid-template-areas: "cabecera   cabecera" "portada    portada" "titulos    titulos" "card1      card2" "card3      card4" "footer     footer";
 }
-
-.card1 {
+.container .titulos-prod {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: titulos;
+}
+.container .card1 {
   grid-area: card1;
 }
-
-.card2 {
+.container .card2 {
   grid-area: card2;
 }
-
-.card3 {
+.container .card3 {
   grid-area: card3;
 }
-
-.card4 {
+.container .card4 {
   grid-area: card4;
 }
 
 @media screen and (min-width: 1024px) {
   .container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 4em 30em auto 10em;
-    grid-template-areas: "cabecera   cabecera    cabecera    cabecera" "portada    portada     portada     portada" "card1      card2       card3       card4" "footer     footer      footer      footer";
+    grid-template-rows: 4em 20em 5em auto 10em;
+    grid-template-areas: "cabecera   cabecera    cabecera    cabecera" "portada    portada     portada     portada" "titulos    titulos     titulos     titulos" "card1      card2       card3       card4" "footer     footer      footer      footer";
+  }
+  .titulos-prod h2 {
+    font-size: 3rem;
   }
 }
 .grid-footer {
   grid-area: footer;
   display: grid;
   color: #80776B;
+  margin-top: 2rem;
   background-image: url(../img/img-footer.jpg);
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
@@ -211,6 +232,7 @@ a {
   font-weight: 700;
   color: #352020;
   background-color: #e0e0e0;
+  margin: 0 1rem;
   padding: 1rem 2rem;
   border: none;
   border-radius: 7px;
@@ -226,9 +248,6 @@ a {
 
 @media screen and (min-width: 1024px) {
   .boton button {
-    font-weight: 700;
-    color: #352020;
-    background-color: #e0e0e0;
     padding: 2rem 3rem;
     font-size: 2rem;
   }
@@ -296,7 +315,7 @@ a {
 @media screen and (min-width: 1024px) {
   .evento-contenedor {
     grid-template-columns: 1fr;
-    grid-template-rows: 4em 30em auto 10em;
+    grid-template-rows: 4em 20em auto 10em;
   }
   .noticias {
     grid-template-columns: repeat(2, 1fr);
@@ -314,33 +333,375 @@ a {
   }
   .event-portada {
     background-size: 130%;
-    background-position: -550px -550px;
+    background-position: center center;
   }
 }
 .tienda-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 8em 20em repeat(8, auto) 15em;
-  grid-template-areas: "cabecera   cabecera" "t-portada  t-portada" "prod1      prod2" "prod3      prod4" "prod5      prod6" "prod7      prod8" "prod9      prod10" "prod11     ." "prod12     prod13" "prod14     prod15" "footer     footer";
+  grid-template-rows: 8em 20em 5em auto auto 5em auto auto 5em auto auto 5em auto auto 15em;
+  grid-template-areas: "cabecera      cabecera" "t-portada     t-portada" "vino-blanco   vino-blanco" "prod1         prod2" "prod3         prod4" "vino-rojo     vino-rojo" "prod5         prod6" "prod7         prod8" "espumantes    espumantes" "prod9         prod10" "prod11        prod11" "oliva         oliva" "prod12        prod13" "prod14        prod15" "footer        footer";
 }
-
-.tienda-portada {
+.tienda-container .vino-blanco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: vino-blanco;
+}
+.tienda-container .vino-blanco h2 {
+  font-size: 3rem;
+}
+.tienda-container .vino-rojo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: vino-rojo;
+}
+.tienda-container .vino-rojo h2 {
+  font-size: 3rem;
+}
+.tienda-container .espumantes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: espumantes;
+}
+.tienda-container .espumantes h2 {
+  font-size: 3rem;
+}
+.tienda-container .oliva {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: oliva;
+}
+.tienda-container .oliva h2 {
+  font-size: 3rem;
+}
+.tienda-container .tienda-portada {
   grid-area: t-portada;
   background-image: url(/img/tienda-100.jpg);
   background-position: center center;
   justify-content: start;
   padding-top: 5rem;
 }
+.tienda-container .prod1 {
+  grid-area: prod1;
+}
+.tienda-container .prod2 {
+  grid-area: prod2;
+}
+.tienda-container .prod3 {
+  grid-area: prod3;
+}
+.tienda-container .prod4 {
+  grid-area: prod4;
+}
+.tienda-container .prod5 {
+  grid-area: prod5;
+}
+.tienda-container .prod6 {
+  grid-area: prod6;
+}
+.tienda-container .prod7 {
+  grid-area: prod7;
+}
+.tienda-container .prod8 {
+  grid-area: prod8;
+}
+.tienda-container .prod9 {
+  grid-area: prod9;
+}
+.tienda-container .prod10 {
+  grid-area: prod10;
+}
+.tienda-container .prod11 {
+  grid-area: prod11;
+  justify-self: center;
+}
+.tienda-container .prod12 {
+  grid-area: prod12;
+}
+.tienda-container .prod13 {
+  grid-area: prod13;
+}
+.tienda-container .prod14 {
+  grid-area: prod14;
+}
+.tienda-container .prod15 {
+  grid-area: prod15;
+}
 
 @media screen and (min-width: 1024px) {
   .tienda-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 4em 20em repeat(4, auto) 10em;
-    grid-template-areas: "cabecera   cabecera    cabecera    cabecera" "t-portada  t-portada   t-portada   t-portada" "prod1      prod2       prod3       prod4" "prod5      prod6       prod7       prod8" "prod9      prod10      prod11      ." "prod12     prod13      prod14      prod15" "footer     footer      footer      footer";
+    grid-template-rows: 4em 20em 5em auto 5em auto 5em auto 5em auto 10em;
+    grid-template-areas: "cabecera     cabecera      cabecera            cabecera" "t-portada    t-portada     t-portada           t-portada" "vino-blanco  vino-blanco   vino-blanco         vino-blanco" "prod1        prod2         prod3               prod4" "vino-rojo    vino-rojo     vino-rojo           vino-rojo" "prod5        prod6         prod7               prod8" "espumantes   espumantes    espumantes          espumantes" "prod9        prod10        prod11              ." "oliva        oliva         oliva               oliva" "prod12       prod13        prod14              prod15" "footer       footer        footer              footer";
   }
-  .tienda-portada {
+  .tienda-container .tienda-portada {
     background-size: 125%;
     background-position: -150px -350px;
+  }
+  .tienda-container .vino-blanco h2, .tienda-container .vino-rojo h2, .tienda-container .espumantes h2, .tienda-container .oliva h2 {
+    font-size: 3rem;
+  }
+}
+.boton button {
+  font-weight: 700;
+  color: #352020;
+  background-color: #e0e0e0;
+  margin: 0 1rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-size: 1.5rem;
+}
+.boton button:hover {
+  background-color: #352020;
+  color: rgb(255, 255, 255);
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 1024px) {
+  .boton button {
+    padding: 2rem 3rem;
+    font-size: 2rem;
+  }
+}
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 8em 20em 5em auto auto 15em;
+  grid-template-areas: "cabecera" "c-port" "c-horarios" "c-form" "c-mapa" "footer";
+}
+.contact-container .contact-portada {
+  grid-area: c-port;
+  background-image: url(../../img/portada-contacto.jpg);
+}
+.contact-container .horario {
+  grid-area: c-horarios;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-container .horario h4 {
+  color: #DDA15E;
+  font-size: 3rem;
+}
+.contact-container .mapa {
+  grid-area: c-mapa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+.contact-container .mapa iframe {
+  border-radius: 1rem;
+  width: 95%;
+}
+
+@media screen and (min-width: 1024px) {
+  .contact-container {
+    grid-template-rows: 4em 20em 8em auto auto 10em;
+  }
+  .contact-container .contact-portada {
+    background-size: 100%;
+    background-position: center center;
+  }
+  .contact-container .horario h4 {
+    font-size: 4rem;
+  }
+  .contact-container .horario p {
+    font-size: 3rem;
+  }
+  .contact-container .mapa {
+    grid-area: c-mapa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  .contact-container .mapa iframe {
+    border-radius: 1rem;
+    width: 95%;
+  }
+}
+.form-contact {
+  grid-area: c-form;
+  display: grid;
+  justify-self: center;
+  border-radius: 1rem;
+  padding: 2rem 0;
+  width: 95%;
+  background-color: #eeeeee;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas: "nombre" "email" "tel" "asunto" "mensaje";
+  gap: 2rem 0;
+}
+.form-contact .nombre {
+  grid-area: nombre;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-contact .email {
+  grid-area: email;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-contact .telefono {
+  grid-area: tel;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-contact .asunto {
+  grid-area: asunto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-contact .mensaje {
+  grid-area: mensaje;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-contact .mensaje textarea {
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeeeee;
+  border-style: none;
+  border-bottom: solid 1px black;
+}
+.form-contact .mensaje .boton {
+  margin-top: 2rem;
+}
+.form-contact .mensaje .boton .enviar {
+  color: #365a3b;
+}
+.form-contact .mensaje .boton .enviar:hover {
+  background-color: #365a3b;
+  color: rgb(255, 255, 255);
+}
+.form-contact .mensaje .boton .limpiar {
+  color: #850000;
+}
+.form-contact .mensaje .boton .limpiar:hover {
+  background-color: #850000;
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (min-width: 1024px) {
+  .form-contact {
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "nombre     asunto" "email      mensaje" "tel        mensaje";
+    gap: 2rem 0;
+  }
+  .form-contact .mensaje textarea {
+    width: 60rem;
+  }
+}
+.oliva-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 8em 20em 5em auto auto 15em;
+  grid-template-areas: "cabecera       cabecera" "o-portada      o-portada" "o-tittle       o-tittle" "oliva1         oliva2" "oliva3         oliva4" "footer         footer";
+}
+.oliva-container .grid-menu {
+  background-color: #37423D;
+}
+.oliva-container .grid-menu ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.oliva-container .grid-menu ul li {
+  list-style: none;
+}
+.oliva-container .grid-menu ul li:hover {
+  transform: scale(1.1);
+}
+.oliva-container .grid-menu ul li a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: white;
+}
+.oliva-container .grid-menu ul li a:hover {
+  color: #5b8a75;
+}
+.oliva-container .oliva-portada {
+  grid-area: o-portada;
+  background-image: url(/img/oliva-port.png);
+  background-position: center center;
+}
+.oliva-container .o-tittle {
+  grid-area: o-tittle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.oliva-container .o-tittle h2 {
+  font-size: 3rem;
+}
+.oliva-container .oliva1 {
+  grid-area: oliva1;
+}
+.oliva-container .oliva1:hover {
+  color: #4C644A;
+}
+.oliva-container .oliva2 {
+  grid-area: oliva2;
+}
+.oliva-container .oliva2:hover {
+  color: #4C644A;
+}
+.oliva-container .oliva3 {
+  grid-area: oliva3;
+}
+.oliva-container .oliva3:hover {
+  color: #4C644A;
+}
+.oliva-container .oliva4 {
+  grid-area: oliva4;
+}
+.oliva-container .oliva4:hover {
+  color: #4C644A;
+}
+
+@media screen and (min-width: 1024px) {
+  .oliva-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 4em 20em 5em auto 10em;
+    grid-template-areas: "cabecera       cabecera        cabecera        cabecera" "o-portada      o-portada       o-portada       o-portada" "o-tittle       o-tittle        o-tittle        o-tittle" "oliva1         oliva2          oliva3          oliva4" "footer         footer          footer          footer";
+  }
+  .oliva-container .oliva-portada {
+    background-size: 100%;
+    background-position: center center;
+    align-items: flex-start;
+  }
+  .oliva-container .oliva-portada h1, .oliva-container .oliva-portada p {
+    text-align: left;
+  }
+  .oliva-container .grid-footer p, .oliva-container .grid-footer h2, .oliva-container .grid-footer a {
+    color: #4C644A;
   }
 }
 

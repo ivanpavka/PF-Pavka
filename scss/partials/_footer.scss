@@ -2,6 +2,7 @@
     grid-area: footer;
     display: grid;
     color: #80776B;
+    margin-top: 2rem;
     background-image: url(../img/img-footer.jpg);
     grid-template-columns: 1fr; 
     grid-template-rows: repeat(3, 1fr);

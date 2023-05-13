@@ -2,13 +2,14 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 html {
     font-family: contralto-small;
     font-weight: 200;
     font-size: 62.5%;
+    color: #464646;
 }
 
 h1 {
@@ -26,6 +27,10 @@ img {
     max-width: 100%;
 }
 
+iframe{
+    max-width: 100%;
+}
+
 a{
     text-decoration: none;
 }
@@ -34,14 +39,28 @@ a{
     text-align: center;
 }
 
+label{
+    font-size: 3rem;
+}
+
+input{
+    width: 40rem;
+    height: 3rem;
+    background-color: #eeeeee;
+    border-style: none;
+    border-bottom: solid 1px black;
+}
+
 .cards {
     margin: 2rem 0;
     align-self: center;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    
     &:hover{
         transform: scale(1.1);
+        color: #521414;
     }
 }
 

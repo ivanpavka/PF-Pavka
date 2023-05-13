@@ -1,48 +1,138 @@
+@import '../var/variables';
+
 .tienda-container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 8em 20em repeat(8, auto) 15em;
+    grid-template-rows: 8em 20em 5em auto auto 5em auto auto 5em auto auto 5em auto auto 15em;
     grid-template-areas: 
-                        "cabecera   cabecera"
-                        "t-portada  t-portada"
-                        "prod1      prod2" 
-                        "prod3      prod4"
-                        "prod5      prod6" 
-                        "prod7      prod8"
-                        "prod9      prod10"
-                        "prod11     ."
-                        "prod12     prod13"
-                        "prod14     prod15"
-                        "footer     footer"; 
-}
+                        "cabecera      cabecera"
+                        "t-portada     t-portada"
+                        "vino-blanco   vino-blanco"
+                        "prod1         prod2" 
+                        "prod3         prod4"
+                        "vino-rojo     vino-rojo"
+                        "prod5         prod6" 
+                        "prod7         prod8"
+                        "espumantes    espumantes"
+                        "prod9         prod10"
+                        "prod11        prod11"
+                        "oliva         oliva"
+                        "prod12        prod13"
+                        "prod14        prod15"
+                        "footer        footer";
+    
+    .vino-blanco{
+        @include flex-textcenter;
+        grid-area: vino-blanco;
+        h2{
+            font-size: 3rem;
+        }
+    }
+    .vino-rojo{
+        @include flex-textcenter;
+        grid-area: vino-rojo;
+        h2{
+            font-size: 3rem;
+        }
+    }
+    .espumantes{
+        @include flex-textcenter;
+        grid-area: espumantes;
+        h2{
+            font-size: 3rem;
+        }
+    }
+    .oliva{
+        @include flex-textcenter;
+        grid-area: oliva;
+        h2{
+            font-size: 3rem;
+        }
+    }
 
-.tienda-portada{
-    grid-area: t-portada;
-    @extend .grid-portada;
-    background-image: url(/img/tienda-100.jpg);
-    background-position: center center;
-    justify-content: start;
-    padding-top: 5rem;
-
+    .tienda-portada{
+        grid-area: t-portada;
+        @extend .grid-portada;
+        background-image: url(/img/tienda-100.jpg);
+        background-position: center center;
+        justify-content: start;
+        padding-top: 5rem;
+    
+    }
+    .prod1 { 
+        grid-area: prod1; 
+    }
+    .prod2 { 
+        grid-area: prod2; 
+    }
+    .prod3 { 
+        grid-area: prod3; 
+    }
+    .prod4 { 
+        grid-area: prod4; 
+    }
+    .prod5 { 
+        grid-area: prod5; 
+    }
+    .prod6 { 
+        grid-area: prod6; 
+    }
+    .prod7 { 
+        grid-area: prod7; 
+    }
+    .prod8 { 
+        grid-area: prod8; 
+    }
+    .prod9 { 
+        grid-area: prod9;
+    }
+    .prod10 { 
+        grid-area: prod10; 
+    }
+    .prod11 { 
+        grid-area: prod11;
+        justify-self: center;
+    }
+    .prod12 { 
+        grid-area: prod12; 
+    }
+    .prod13 { 
+        grid-area: prod13; 
+    }
+    .prod14 { 
+        grid-area: prod14; 
+    }
+    .prod15 { 
+        grid-area: prod15; 
+    } 
 }
 
 @media screen and (min-width: 1024px){
     .tienda-container {
         grid-template-columns: 1fr 1fr 1fr 1fr; 
-        grid-template-rows: 4em 20em repeat(4, auto) 10em;
+        grid-template-rows: 4em 20em 5em auto 5em auto 5em auto 5em auto 10em;
         grid-template-areas: 
-                            "cabecera   cabecera    cabecera    cabecera"
-                            "t-portada  t-portada   t-portada   t-portada"
-                            "prod1      prod2       prod3       prod4"
-                            "prod5      prod6       prod7       prod8"
-                            "prod9      prod10      prod11      ."
-                            "prod12     prod13      prod14      prod15"
-                            "footer     footer      footer      footer"; 
-    }
-
+                            "cabecera     cabecera      cabecera            cabecera"
+                            "t-portada    t-portada     t-portada           t-portada"
+                            "vino-blanco  vino-blanco   vino-blanco         vino-blanco"
+                            "prod1        prod2         prod3               prod4"
+                            "vino-rojo    vino-rojo     vino-rojo           vino-rojo"
+                            "prod5        prod6         prod7               prod8"
+                            "espumantes   espumantes    espumantes          espumantes"
+                            "prod9        prod10        prod11              ."
+                            "oliva        oliva         oliva               oliva"
+                            "prod12       prod13        prod14              prod15"
+                            "footer       footer        footer              footer"; 
     .tienda-portada{
         background-size: 125%;
-        background-position: -150px -350px;           
+        background-position: -150px -350px;         
+    }
+
+    .vino-blanco, .vino-rojo, .espumantes, .oliva{
+        h2{
+            font-size: 3rem;
+        }
+    }
     }
 }
 

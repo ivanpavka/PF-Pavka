@@ -1,0 +1,105 @@
+@import '../var/variables';
+
+.form-contact{
+    grid-area: c-form;
+    display: grid;
+    justify-self: center;
+    border-radius: 1rem;
+    padding: 2rem 0;
+    width: 95%;
+    background-color: #eeeeee;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+                        "nombre"
+                        "email"
+                        "tel"
+                        "asunto"
+                        "mensaje";
+             
+    gap: 2rem 0;
+
+    .nombre{
+        grid-area: nombre;
+        @include flex-textcenter;
+        flex-direction: column;
+        
+    }
+
+    .email{
+        grid-area: email;
+        @include flex-textcenter;
+        flex-direction: column;
+    }
+
+    .telefono{
+        grid-area: tel;
+        @include flex-textcenter;
+        flex-direction: column;
+    }
+
+    .asunto{
+        grid-area: asunto;
+        @include flex-textcenter;
+        flex-direction: column;
+    }
+
+    .mensaje{
+        grid-area: mensaje;
+        @include flex-textcenter;
+        flex-direction: column;
+
+        textarea{
+            display: flex;   
+            flex-direction: column;
+            width: 40rem;
+            justify-content: center;
+            align-items: center;
+            background-color: #eeeeee;
+            border-style: none;
+            border-bottom: solid 1px black;
+        }
+
+        .boton{
+            margin-top: 2rem;
+            
+            .enviar{
+                color: #365a3b;
+                &:hover{
+                    background-color:#365a3b;
+                    color: rgb(255, 255, 255);
+                }
+            }
+
+            .limpiar{
+                color: #850000;
+                &:hover{
+                    background-color:#850000;
+                    color: rgb(255, 255, 255);
+                }
+            }
+
+        }
+    }
+    
+}
+
+@media screen and (min-width: 1024px){
+    .form-contact{
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+                            "nombre     asunto"
+                            "email      mensaje"
+                            "tel        mensaje";
+
+        gap: 2rem 0;
+
+        .mensaje{
+            textarea{
+                width: 60rem;
+            }
+        }
+    }
+}

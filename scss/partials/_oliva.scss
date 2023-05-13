@@ -1,0 +1,113 @@
+@import '../var/variables';
+
+.oliva-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 8em 20em 5em auto auto 15em;
+    grid-template-areas:
+                        "cabecera       cabecera"
+                        "o-portada      o-portada"
+                        "o-tittle       o-tittle"
+                        "oliva1         oliva2"
+                        "oliva3         oliva4"
+                        "footer         footer";
+
+    .grid-menu{
+        background-color: #37423D;
+        ul{
+            @include flex-between;        
+            gap: 1rem;
+            li{
+                list-style: none;
+                &:hover{
+                    transform: scale(1.1);
+                }
+                a{
+                    text-decoration: none;
+                    font-size: 2rem;
+                    color: white;
+                    &:hover{
+                        color: #5b8a75;
+                    }
+                }
+            }   
+        }
+    }    
+    
+    .oliva-portada{
+        grid-area: o-portada;
+        @extend .grid-portada;
+        background-image: url(/img/oliva-port.png);
+        background-position: center center;
+    }
+
+    .o-tittle{
+        grid-area: o-tittle;
+        @include flex-textcenter;
+        h2{
+            font-size: 3rem;
+        }
+    }
+
+    .oliva1{
+        grid-area: oliva1;
+        &:hover{
+            color: #4C644A;
+        }
+    }
+    .oliva2{
+        grid-area: oliva2;
+        &:hover{
+            color: #4C644A;
+        }
+    }
+    .oliva3{
+        grid-area: oliva3;
+        &:hover{
+            color: #4C644A;
+        }
+    }
+    .oliva4{
+        grid-area: oliva4;
+        &:hover{
+            color: #4C644A;
+        }
+    }
+
+
+
+    
+
+}
+
+@media screen and (min-width: 1024px){
+    .oliva-container{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 4em 20em 5em auto 10em;
+        grid-template-areas:
+                        "cabecera       cabecera        cabecera        cabecera"
+                        "o-portada      o-portada       o-portada       o-portada"
+                        "o-tittle       o-tittle        o-tittle        o-tittle"
+                        "oliva1         oliva2          oliva3          oliva4"
+                        "footer         footer          footer          footer";
+        
+        .oliva-portada{
+            background-size: 100%;
+            background-position: center center;
+            align-items: flex-start;
+            h1, p{
+                text-align: left;
+            }
+        }
+
+        .grid-footer{
+            p, h2, a{
+                color: #4C644A;
+            }
+        }
+
+
+    }
+
+
+}
