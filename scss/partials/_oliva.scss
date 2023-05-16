@@ -37,7 +37,7 @@
     .oliva-portada{
         grid-area: o-portada;
         @extend .grid-portada;
-        background-image: url(/img/oliva-port.png);
+        background-image: url(../img/oliva-port.png);
         background-position: center center;
     }
 

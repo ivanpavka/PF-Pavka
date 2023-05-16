@@ -17,7 +17,7 @@
     .contact-portada{
         grid-area: c-port;
         @extend .grid-portada;
-        background-image: url(../../img/portada-contacto.jpg);
+        background-image: url(../img/portada-contacto.jpg);
     }
 
     .horario{

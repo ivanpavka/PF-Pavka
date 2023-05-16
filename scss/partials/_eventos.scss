@@ -13,8 +13,10 @@
 .event-portada{
     grid-area: event-portada;
     @extend .grid-portada;
-    background-image: url(/img/eventos-port.jpg);
-
+    background: url(../img/eventos-port.jpg);
+    background-size: 230%;
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
 
 .noticias {

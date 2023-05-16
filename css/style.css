@@ -56,6 +56,7 @@ input {
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease 0s;
+  max-width: 100%;
 }
 .cards:hover {
   transform: scale(1.1);
@@ -104,6 +105,9 @@ input {
 .grid-menu ul li a:hover {
   color: rgb(243, 214, 133);
 }
+.grid-menu ul li a:active {
+  color: #3f3f3f;
+}
 
 @media screen and (min-width: 1024px) {
   .grid-menu {
@@ -119,9 +123,9 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(../../img/portada-home.jpg);
+  background-image: url(../img/portada-home.jpg);
   background-repeat: no-repeat;
-  background-size: 200%;
+  background-size: 300%;
   background-position: -350px center;
   color: #fdf9df;
 }
@@ -261,7 +265,10 @@ input {
 
 .event-portada {
   grid-area: event-portada;
-  background-image: url(/img/eventos-port.jpg);
+  background: url(../img/eventos-port.jpg);
+  background-size: 230%;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 .noticias {
@@ -478,7 +485,7 @@ input {
 }
 .contact-container .contact-portada {
   grid-area: c-port;
-  background-image: url(../../img/portada-contacto.jpg);
+  background-image: url(../img/portada-contacto.jpg);
 }
 .contact-container .horario {
   grid-area: c-horarios;
@@ -649,7 +656,7 @@ input {
 }
 .oliva-container .oliva-portada {
   grid-area: o-portada;
-  background-image: url(/img/oliva-port.png);
+  background-image: url(../img/oliva-port.png);
   background-position: center center;
 }
 .oliva-container .o-tittle {

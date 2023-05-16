@@ -26,16 +26,21 @@
         @include flex-between;        
         gap: 1rem;
         li{
+
             list-style: none;
             &:hover{
                 transform: scale(1.1);
             }
+            
             a{
                 text-decoration: none;
                 font-size: 2rem;
                 color: white;
                 &:hover{
                     color: rgb(243, 214, 133);
+                }
+                &:active{
+                    color: #3f3f3f;
                 }
             }
         }
