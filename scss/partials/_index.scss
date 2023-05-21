@@ -1,6 +1,6 @@
 @import '../var/variables';
 
-.container {
+.conteiner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 8em 20em 5em auto auto 15em;
@@ -40,7 +40,7 @@
 
 
 @media screen and (min-width: 1024px){
-    .container{
+    .conteiner{
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 4em 20em 5em auto 10em;
         grid-template-areas:

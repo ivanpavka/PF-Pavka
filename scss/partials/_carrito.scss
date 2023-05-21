@@ -1,0 +1,114 @@
+@import '../var/variables';
+
+.carri-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 8em auto auto 15em;
+    grid-template-areas:
+                        "cabecera    cabecera"
+                        "encabezado  encabezado"
+                        "carrito     carrito"
+                        "footer      footer";
+    
+    img{
+        width: 10rem;
+        height: auto;
+    }
+
+    .carrito{
+
+        grid-area: carrito;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 4em repeat(6, 10em);
+        grid-template-areas:
+                            ".      descrip     cantidad    precio"
+                            "img1   descrip1    cant1       precio1"
+                            "img2   descrip2    cant2       precio2"
+                            "img3   descrip3    cant3       precio3";
+        
+        .descript{
+            grid-area: descrip;
+        }
+        .cantidad{
+            grid-area: cantidad;
+        }
+        .precio{
+            grid-area: precio;
+        }
+
+        /*PROD1*/
+        .img1{
+            grid-area: img1;
+        }
+        .descrip1{
+            grid-area: descrip1;
+        }
+        .cant1{
+            grid-area: cant1;
+        }
+        .precio1{
+            grid-area: precio1;
+        }
+
+        /*PROD2*/
+        .img2{
+            grid-area: img2;
+        }
+        .descrip2{
+            grid-area: descrip2;
+        }
+        .cant2{
+            grid-area: cant2;
+        }
+        .precio2{
+            grid-area: precio2;
+        }
+
+        /*PROD3*/
+        .img3{
+            grid-area: img3;
+        }
+        .descrip3{
+            grid-area: descrip3;
+        }
+        .cant3{
+            grid-area: cant3;
+        }
+        .precio3{
+            grid-area: precio3;
+        }
+
+
+    }
+
+    
+}
+
+.carrito:not(:last-child){
+    border-top: 1px solid gray;
+}
+
+@media screen and (min-width: 1024px){
+    .carri-content{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 4em auto auto 10em;
+
+        img{
+            width: 20rem;
+            height: auto;
+        }
+
+
+        .carrito{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 4em repeat(3, 15em);
+            
+            h2, h3, h4, p{
+                font-size: 3rem;
+            }
+        }
+    }
+}

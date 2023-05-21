@@ -15,7 +15,7 @@
                         "prod7         prod8"
                         "espumantes    espumantes"
                         "prod9         prod10"
-                        "prod11        prod11"
+                        "prod11        ."
                         "oliva         oliva"
                         "prod12        prod13"
                         "prod14        prod15"
@@ -53,7 +53,7 @@
     .tienda-portada{
         grid-area: t-portada;
         @extend .grid-portada;
-        background-image: url(/img/tienda-100.jpg);
+        background-image: url(../img/tienda-100.jpg);
         background-position: center center;
         justify-content: start;
         padding-top: 5rem;
@@ -91,7 +91,6 @@
     }
     .prod11 { 
         grid-area: prod11;
-        justify-self: center;
     }
     .prod12 { 
         grid-area: prod12; 

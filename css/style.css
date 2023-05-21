@@ -151,33 +151,33 @@ input {
     width: 70rem;
   }
 }
-.container {
+.conteiner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 8em 20em 5em auto auto 15em;
   grid-template-areas: "cabecera   cabecera" "portada    portada" "titulos    titulos" "card1      card2" "card3      card4" "footer     footer";
 }
-.container .titulos-prod {
+.conteiner .titulos-prod {
   display: flex;
   justify-content: center;
   align-items: center;
   grid-area: titulos;
 }
-.container .card1 {
+.conteiner .card1 {
   grid-area: card1;
 }
-.container .card2 {
+.conteiner .card2 {
   grid-area: card2;
 }
-.container .card3 {
+.conteiner .card3 {
   grid-area: card3;
 }
-.container .card4 {
+.conteiner .card4 {
   grid-area: card4;
 }
 
 @media screen and (min-width: 1024px) {
-  .container {
+  .conteiner {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 4em 20em 5em auto 10em;
     grid-template-areas: "cabecera   cabecera    cabecera    cabecera" "portada    portada     portada     portada" "titulos    titulos     titulos     titulos" "card1      card2       card3       card4" "footer     footer      footer      footer";
@@ -317,6 +317,7 @@ input {
   margin-top: 1rem;
   font-size: 2rem;
   width: 40rem;
+  max-width: 100%;
 }
 
 @media screen and (min-width: 1024px) {
@@ -330,13 +331,13 @@ input {
     grid-template-areas: "noti1    noti2" "noti3    noti4";
   }
   .evento h2 {
-    font-size: 5rem;
+    font-size: 3.5rem;
     color: #5f0e0e;
   }
   .evento p {
     margin-top: 1rem;
     font-size: 3rem;
-    width: 70rem;
+    width: 50rem;
   }
   .event-portada {
     background-size: 130%;
@@ -347,7 +348,7 @@ input {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 8em 20em 5em auto auto 5em auto auto 5em auto auto 5em auto auto 15em;
-  grid-template-areas: "cabecera      cabecera" "t-portada     t-portada" "vino-blanco   vino-blanco" "prod1         prod2" "prod3         prod4" "vino-rojo     vino-rojo" "prod5         prod6" "prod7         prod8" "espumantes    espumantes" "prod9         prod10" "prod11        prod11" "oliva         oliva" "prod12        prod13" "prod14        prod15" "footer        footer";
+  grid-template-areas: "cabecera      cabecera" "t-portada     t-portada" "vino-blanco   vino-blanco" "prod1         prod2" "prod3         prod4" "vino-rojo     vino-rojo" "prod5         prod6" "prod7         prod8" "espumantes    espumantes" "prod9         prod10" "prod11        ." "oliva         oliva" "prod12        prod13" "prod14        prod15" "footer        footer";
 }
 .tienda-container .vino-blanco {
   display: flex;
@@ -387,7 +388,7 @@ input {
 }
 .tienda-container .tienda-portada {
   grid-area: t-portada;
-  background-image: url(/img/tienda-100.jpg);
+  background-image: url(../img/tienda-100.jpg);
   background-position: center center;
   justify-content: start;
   padding-top: 5rem;
@@ -424,7 +425,6 @@ input {
 }
 .tienda-container .prod11 {
   grid-area: prod11;
-  justify-self: center;
 }
 .tienda-container .prod12 {
   grid-area: prod12;
@@ -589,6 +589,7 @@ input {
   display: flex;
   flex-direction: column;
   width: 40rem;
+  height: 10rem;
   justify-content: center;
   align-items: center;
   background-color: #eeeeee;
@@ -709,6 +710,95 @@ input {
   }
   .oliva-container .grid-footer p, .oliva-container .grid-footer h2, .oliva-container .grid-footer a {
     color: #4C644A;
+  }
+}
+.carri-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 8em auto auto 15em;
+  grid-template-areas: "cabecera    cabecera" "encabezado  encabezado" "carrito     carrito" "footer      footer";
+}
+.carri-content img {
+  width: 10rem;
+  height: auto;
+}
+.carri-content .carrito {
+  grid-area: carrito;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 4em repeat(6, 10em);
+  grid-template-areas: ".      descrip     cantidad    precio" "img1   descrip1    cant1       precio1" "img2   descrip2    cant2       precio2" "img3   descrip3    cant3       precio3";
+  /*PROD1*/
+  /*PROD2*/
+  /*PROD3*/
+}
+.carri-content .carrito .descript {
+  grid-area: descrip;
+}
+.carri-content .carrito .cantidad {
+  grid-area: cantidad;
+}
+.carri-content .carrito .precio {
+  grid-area: precio;
+}
+.carri-content .carrito .img1 {
+  grid-area: img1;
+}
+.carri-content .carrito .descrip1 {
+  grid-area: descrip1;
+}
+.carri-content .carrito .cant1 {
+  grid-area: cant1;
+}
+.carri-content .carrito .precio1 {
+  grid-area: precio1;
+}
+.carri-content .carrito .img2 {
+  grid-area: img2;
+}
+.carri-content .carrito .descrip2 {
+  grid-area: descrip2;
+}
+.carri-content .carrito .cant2 {
+  grid-area: cant2;
+}
+.carri-content .carrito .precio2 {
+  grid-area: precio2;
+}
+.carri-content .carrito .img3 {
+  grid-area: img3;
+}
+.carri-content .carrito .descrip3 {
+  grid-area: descrip3;
+}
+.carri-content .carrito .cant3 {
+  grid-area: cant3;
+}
+.carri-content .carrito .precio3 {
+  grid-area: precio3;
+}
+
+.carrito:not(:last-child) {
+  border-top: 1px solid gray;
+}
+
+@media screen and (min-width: 1024px) {
+  .carri-content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4em auto auto 10em;
+  }
+  .carri-content img {
+    width: 20rem;
+    height: auto;
+  }
+  .carri-content .carrito {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 4em repeat(3, 15em);
+  }
+  .carri-content .carrito h2, .carri-content .carrito h3, .carri-content .carrito h4, .carri-content .carrito p {
+    font-size: 3rem;
   }
 }
 
