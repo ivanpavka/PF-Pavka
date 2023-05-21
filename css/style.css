@@ -728,7 +728,7 @@ input {
   justify-content: center;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 4em repeat(6, 10em);
+  grid-template-rows: 4em repeat(3, 10em);
   grid-template-areas: ".      descrip     cantidad    precio" "img1   descrip1    cant1       precio1" "img2   descrip2    cant2       precio2" "img3   descrip3    cant3       precio3";
   /*PROD1*/
   /*PROD2*/
